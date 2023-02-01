@@ -27,7 +27,7 @@ if user_phrase == secretphrase:
         for file in files:
                 with open(file, "rb") as thefile:
                         contents = thefile.read()
-                contents_encrypted = Fernet(secretkey).decrypt(contents)
+                contents_decrypted = Fernet(secretkey).decrypt(contents)
                 with open(file, "wb") as thefile:
                         thefile.write(contents_decrypted)
                 print("congrats, you're files decrypted. Enjoy your coffee")
